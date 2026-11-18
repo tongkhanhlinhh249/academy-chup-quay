@@ -123,6 +123,7 @@ body.on-form .fab-call,body.on-form .to-top{opacity:0;visibility:hidden;pointer-
 @keyframes spin-slow{to{transform:rotate(360deg)}}
 @media(max-width:1023px){.hero-bg .ring{display:none}.hero-bg .blob{filter:blur(48px)}}
 @media(prefers-reduced-motion:reduce){.hero-bg .blob,.hero-bg .ring{animation:none}}
+.hero>.container{width:100%}
 .hero-grid{position:relative;z-index:1;display:grid;gap:48px;align-items:center}
 @media(min-width:1024px){.hero-grid{grid-template-columns:1.1fr .9fr}}
 .badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;border-radius:var(--r-pill);padding:6px 14px;border:1px solid}
@@ -134,7 +135,7 @@ body.on-form .fab-call,body.on-form .to-top{opacity:0;visibility:hidden;pointer-
 .hero-title{font-family:var(--font-display);font-size:34px;font-weight:700;line-height:1.15}
 @media(min-width:1024px){.hero-title{font-size:52px}}
 .hero-lead{font-family:var(--font-display);font-size:clamp(20px,2.4vw,24px);font-weight:600;letter-spacing:-.02em;line-height:1.4;margin:20px 0 0;max-width:560px}
-.hero-sub{font-size:16px;line-height:1.75;color:var(--ink-soft);margin:20px 0 32px;max-width:560px}
+.hero-sub{font-size:16px;line-height:1.75;color:var(--ink-soft);margin:20px 0 32px;max-width:none}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
 .hero-visual{position:relative;max-width:540px;margin:0 auto;width:100%;aspect-ratio:1/1.02}
 .hero-disc{position:absolute;inset:8% 0 6% 26%;border-radius:50%;background:linear-gradient(160deg,#cfe9ff,#e3d7ff 60%,#ffe0e6)}
@@ -554,7 +555,7 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 @media(min-width:1024px){.faq-grid{grid-template-columns:1fr 1.45fr;gap:72px}.faq-side{position:sticky;top:112px}.faq-side .title{font-size:40px}}
 
 /* instructors v2: photo left */
-.teachers{max-width:1040px;margin:0 auto}
+.teachers{max-width:none;margin:0 auto}
 .tcard{display:grid;grid-template-columns:1fr;padding:0;overflow:hidden}
 .t-ph{display:flex;align-items:center;justify-content:center;min-height:200px;background-image:var(--grad-cta);color:rgba(255,255,255,.9);font-family:var(--font-display);font-size:96px;font-weight:700;position:relative;overflow:hidden}
 .t-ph.b{background-image:linear-gradient(135deg,#9462fb,#f86880)}
@@ -579,7 +580,7 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 @media(min-width:640px){.prob h3{min-height:2.7em}}
 
 /* module stacked cards */
-.mstack{display:grid;gap:20px;max-width:1120px;margin:0 auto}
+.mstack{display:grid;gap:20px;max-width:none;margin:0 auto}
 .mcard{--c:#1eaaff;--bg:#eaf6ff;--fr:linear-gradient(135deg,#cfe9ff,#e3d7ff);background:#fff;border:1px solid rgba(30,170,255,.15);border-radius:28px;box-shadow:var(--shadow-card);display:grid;gap:24px;padding:24px;position:relative}
 .mcard.m1{--tag:#c2334f;--tagbg:#fde8ec;--fr:linear-gradient(135deg,#ffd3dc,#ffe9c9)}
 .mcard.m2{--tag:#8a5a12;--tagbg:#faedc4;--fr:linear-gradient(135deg,#fbeab5,#ffd9c2)}
@@ -601,7 +602,7 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 @media(prefers-reduced-motion:reduce){.mcard{position:relative!important;top:auto!important}}
 
 /* module stacked cards */
-.mstack{display:grid;gap:20px;max-width:1120px;margin:0 auto}
+.mstack{display:grid;gap:20px;max-width:none;margin:0 auto}
 .mcard{--c:#1eaaff;--bg:#eaf6ff;--fr:linear-gradient(135deg,#cfe9ff,#e3d7ff);background:#fff;border:1px solid rgba(30,170,255,.15);border-radius:28px;box-shadow:var(--shadow-card);display:grid;gap:24px;padding:24px;position:relative}
 .mcard.m1{--tag:#c2334f;--tagbg:#fde8ec;--fr:linear-gradient(135deg,#ffd3dc,#ffe9c9)}
 .mcard.m2{--tag:#8a5a12;--tagbg:#faedc4;--fr:linear-gradient(135deg,#fbeab5,#ffd9c2)}
@@ -643,6 +644,7 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 @media(min-width:768px){#giang-vien .sec-head .lead{text-wrap:wrap}}
 @media(min-width:768px){#loi-ich .sec-head .lead{text-wrap:wrap}}
 @media(min-width:768px){#quy-trinh .sec-head .lead{text-wrap:wrap}}
+@media(min-width:1024px){#giang-vien .sec-head{max-width:900px}#giang-vien .sec-head .lead{white-space:nowrap}}
 /* benefits: light surface, solid cards */
 #loi-ich.dark{background:linear-gradient(180deg,#eef5ff 0%,#f3efff 100%);color:var(--ink)}
 #loi-ich.dark::before{background:rgba(30,170,255,.16);width:480px;height:480px}
@@ -802,7 +804,7 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
 <section id="van-de" aria-labelledby="prob-h">
   <div class="container">
     <div class="sec-head reveal">
-      <h2 class="title" id="prob-h">Bạn có đang <span class="grad-label-text">gặp phải:</span></h2>
+      <h2 class="title" id="prob-h">Bạn có đang <span class="grad-label-text">gặp phải</span></h2>
       <p class="lead">Những vấn đề phổ biến khi tự sản xuất hình ảnh và video bằng điện thoại cho công việc.</p>
     </div>
     <div class="prob-grid">
@@ -929,8 +931,8 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
 <section id="giang-vien" class="alt" aria-labelledby="meth-h">
   <div class="container">
     <div class="sec-head reveal">
-      <h2 class="title" id="meth-h">Giảng viên <span class="grad-label-text">trực tiếp giảng dạy &amp; hướng dẫn</span></h2>
-      <p class="lead">Đội ngũ làm nghề thực tế trong sản xuất truyền hình, nội dung số<br class="br-d"> và hình ảnh thương mại.</p>
+      <h2 class="title" id="meth-h">Giảng viên trực tiếp<br class="br-d"> <span class="grad-label-text">giảng dạy &amp; hướng dẫn</span></h2>
+      <p class="lead">Đội ngũ làm nghề thực tế trong sản xuất truyền hình, nội dung số và hình ảnh thương mại.</p>
     </div>
     <div class="grid g2 teachers">
       <article class="card tcard reveal">
