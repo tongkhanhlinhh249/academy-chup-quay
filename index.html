@@ -7,6 +7,10 @@
 <link rel="preload" href="assets/fonts/SVN-ZonaPro-Bold.woff" as="font" type="font/woff" crossorigin>
 <title>Sáng tạo hình ảnh và video trên điện thoại | NetSpace Academy</title>
 <meta name="description" content="Khóa học thực hành: từng bước làm chủ kỹ thuật quay, chụp và hậu kỳ trên điện thoại để chủ động sản xuất nội dung phục vụ công việc. NetSpace Academy.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Sáng tạo hình ảnh và video trên điện thoại | NetSpace Academy">
+<meta property="og:description" content="Khóa học thực hành: từng bước làm chủ kỹ thuật quay, chụp và hậu kỳ trên điện thoại để chủ động sản xuất nội dung phục vụ công việc. NetSpace Academy.">
 <link rel="icon" href="assets/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +22,7 @@
   --font-display:'SVN-ZonaPro','Be Vietnam Pro',system-ui,sans-serif;
   --ink-soft:#5a5a7a;
   --canvas:#fff;--hero-surface:#eef3fb;--ink:#131313;--ink-muted:#595959;--ink-light:#767676;
-  --primary:#1eaaff;--secondary:#9462fb;--accent:#6adbe3;--pink:#f86880;--yellow:#fae096;
+  --primary:#1eaaff;--secondary:#9462fb;--secondary-text:#7443e6;--accent:#6adbe3;--pink:#f86880;--yellow:#fae096;
   --border:rgba(29,73,166,.08);
   --grad-headline:linear-gradient(to right,#1eaaff,#9462fb 65%,#e5546f);
   --grad-label:linear-gradient(to right,#1eaaff,#9462fb 65%,#e5546f);
@@ -43,7 +47,7 @@ a{color:inherit}
 *:focus-visible{outline:2.5px solid var(--primary);outline-offset:3px;border-radius:4px}
 a,button{border-radius:var(--r-pill)}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip-link{position:absolute;top:-100%;left:1rem;z-index:9999;background:var(--primary);color:#fff;padding:8px 20px;font-weight:600;font-size:14px;text-decoration:none}
+.skip-link{position:absolute;top:-100%;left:1rem;z-index:9999;background:#1d49a6;color:#fff;padding:12px 20px;min-height:44px;font-weight:600;font-size:14px;text-decoration:none}
 .skip-link:focus{top:1rem}
 .container{max-width:var(--content);margin:0 auto;padding:0 20px}
 @media(min-width:640px){.container{padding:0 24px}}
@@ -52,7 +56,7 @@ section{padding:var(--section-gap) 0}
 .alt.blue{background:linear-gradient(180deg,#fff,#eef7ff)}
 
 /* type */
-.eyebrow{display:inline-block;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--secondary);margin-bottom:12px}
+.eyebrow{display:inline-block;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--secondary-text);margin-bottom:12px}
 h1,h2,h3{text-wrap:balance}
 a,button,summary,label,select{touch-action:manipulation}
 h2.title{font-family:var(--font-display);font-size:28px;font-weight:700;line-height:1.2;color:var(--ink)}
@@ -88,8 +92,11 @@ nav.nav{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-c
 .nav-links{display:none;align-items:center;gap:12px}
 .nav-link{font-size:14px;font-weight:500;color:#000;text-decoration:none;transition:color .2s;white-space:nowrap;line-height:24px;padding:10px 8px;display:inline-block}
 .nav-link:hover{color:var(--primary)}
+body.on-form .fab-call,body.on-form .to-top{opacity:0;visibility:hidden;pointer-events:none}
+.nav-link[aria-current="true"],.nav-link-mobile[aria-current="true"]{color:#0b6fb8;font-weight:600}
 .nav-right{display:flex;align-items:center;gap:8px}
-.hamburger{background:none;border:none;padding:8px;cursor:pointer;color:var(--primary);display:inline-flex;border-radius:var(--r-lg)}
+.nav .logo{display:inline-flex;align-items:center;min-height:44px}
+.hamburger{background:none;border:none;padding:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center;cursor:pointer;color:var(--primary);display:inline-flex;border-radius:var(--r-lg)}
 #mobile-menu{max-width:1240px;margin:8px auto 0;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-radius:var(--r-xl);box-shadow:var(--shadow-card);border:1px solid rgba(255,255,255,.8);padding:12px}
 #mobile-menu[hidden]{display:none}
 .nav-link-mobile{display:block;font-size:15px;font-weight:500;color:var(--ink-muted);padding:12px 16px;border-radius:12px;text-decoration:none}
@@ -120,10 +127,10 @@ nav.nav{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-c
 @media(min-width:1024px){.hero-grid{grid-template-columns:1.1fr .9fr}}
 .badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;border-radius:var(--r-pill);padding:6px 14px;border:1px solid}
 .badge-blue{color:#0070b8;background:rgba(30,170,255,.08);border-color:rgba(30,170,255,.25)}
-.badge-purple{color:var(--secondary);background:rgba(148,98,251,.08);border-color:rgba(148,98,251,.2)}
+.badge-purple{color:var(--secondary-text);background:rgba(148,98,251,.08);border-color:rgba(148,98,251,.2)}
 .badge-pink{color:#c2334f;background:rgba(248,104,128,.08);border-color:rgba(248,104,128,.25)}
 .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--primary)}
-.hero-kicker{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--secondary);margin:0 0 16px}
+.hero-kicker{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--secondary-text);margin:0 0 16px}
 .hero-title{font-family:var(--font-display);font-size:34px;font-weight:700;line-height:1.15}
 @media(min-width:1024px){.hero-title{font-size:52px}}
 .hero-lead{font-family:var(--font-display);font-size:clamp(20px,2.4vw,24px);font-weight:600;letter-spacing:-.02em;line-height:1.4;margin:20px 0 0;max-width:560px}
@@ -133,7 +140,7 @@ nav.nav{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-c
 .hero-disc{position:absolute;inset:8% 0 6% 26%;border-radius:50%;background:linear-gradient(160deg,#cfe9ff,#e3d7ff 60%,#ffe0e6)}
 .hero-photo{position:absolute;right:1%;bottom:6%;width:72%;height:auto}
 .doc{position:absolute;background:#fff;border:1px solid rgba(30,170,255,.15);box-shadow:var(--shadow-card);border-radius:var(--r-md);padding:12px 14px;font-size:13px;line-height:1.4;color:var(--ink)}
-.doc-h{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--secondary);margin-bottom:8px}
+.doc-h{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--secondary-text);margin-bottom:8px}
 .doc-h svg{color:var(--primary)}
 .doc b{font-weight:700}
 .doc-sub{color:var(--ink-soft)}
@@ -207,7 +214,7 @@ nav.nav{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-c
 .session{display:grid;gap:0;padding:0;overflow:hidden;margin-bottom:20px}
 @media(min-width:1024px){.session{grid-template-columns:240px 1fr 1fr}}
 .s-title{padding:28px;background:linear-gradient(160deg,#f1f7ff,#f6f1ff);display:flex;flex-direction:column;gap:12px}
-.s-num{font-size:13px;font-weight:700;color:var(--secondary);text-transform:uppercase;letter-spacing:.1em}
+.s-num{font-size:13px;font-weight:700;color:var(--secondary-text);text-transform:uppercase;letter-spacing:.1em}
 .s-title h4{font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.3}
 .s-col{padding:28px}
 @media(min-width:1024px){.s-col+.s-col{border-left:1px solid var(--border)}}
@@ -218,7 +225,7 @@ nav.nav{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-c
 .ai-item{padding:10px 0;border-top:1px solid var(--border);font-size:14.5px;color:var(--ink-muted);line-height:1.6}
 .ai-item:first-of-type{border-top:0;padding-top:0}
 .ai-item b{display:block;font-size:12.5px;font-weight:700;color:var(--ink);letter-spacing:.04em;margin-bottom:2px}
-.ai-item b span{color:var(--secondary)}
+.ai-item b span{color:var(--secondary-text)}
 
 /* method */
 .card p.stat{font-family:var(--font-display);font-size:48px;font-weight:700;letter-spacing:-.04em;line-height:1}
@@ -258,13 +265,13 @@ nav.nav{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-c
 .t-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
 .t-body{padding:24px 28px 28px}
 .t-body h3{font-size:22px;margin-bottom:4px}
-.t-body .role{font-size:14px;font-weight:600;color:var(--secondary);margin-bottom:14px}
+.t-body .role{font-size:14px;font-weight:600;color:var(--secondary-text);margin-bottom:14px}
 .t-body .dash li{font-size:15px}
 @media(max-width:560px){.t-photo{aspect-ratio:4/4.4}}
 .card.teacher{padding:28px}
 .teacher img{width:96px;height:96px;border-radius:var(--r-lg);object-fit:cover;object-position:top;flex-shrink:0;box-shadow:var(--shadow-nav)}
 .teacher h3{margin-bottom:2px;font-size:18px}
-.teacher .role{font-size:13px;font-weight:600;color:var(--secondary);margin-bottom:8px;display:block}
+.teacher .role{font-size:13px;font-weight:600;color:var(--secondary-text);margin-bottom:8px;display:block}
 @media(max-width:480px){.teacher{flex-direction:column}}
 
 /* register */
@@ -284,7 +291,7 @@ nav.nav{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-c
 @media(min-width:520px){.form-row{grid-template-columns:1fr 1fr}}
 .form-label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
 .form-label .req{color:var(--error)}
-.form-input{display:block;width:100%;font-family:var(--font);font-size:14px;color:var(--ink);background:#fff;border:1.5px solid rgba(29,73,166,.15);border-radius:var(--r-md);padding:11px 14px;outline:none;-webkit-appearance:none;appearance:none;transition:border-color .2s,box-shadow .2s}
+.form-input{display:block;width:100%;min-height:44px;font-family:var(--font);font-size:14px;color:var(--ink);background:#fff;border:1.5px solid rgba(29,73,166,.15);border-radius:var(--r-md);padding:11px 14px;outline:none;-webkit-appearance:none;appearance:none;transition:border-color .2s,box-shadow .2s}
 .form-input::placeholder{color:var(--ink-light)}
 .form-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(30,170,255,.15)}
 .form-input[aria-invalid="true"]{border-color:var(--error);box-shadow:0 0 0 3px rgba(185,28,28,.12)}
@@ -344,7 +351,7 @@ footer h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:14px}
 footer li a,footer .foot-grid a{display:inline-block;padding:6px 0}
 footer a:hover{color:#fff;text-decoration:underline}
 .socials{display:flex;gap:10px;margin-top:20px}
-.socials a{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(255,255,255,.65);transition:background .2s}
+.socials a{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(255,255,255,.65);transition:background .2s}
 footer .socials a{display:flex;align-items:center;justify-content:center;padding:0}
 .socials a:hover{background:rgba(255,255,255,.14);text-decoration:none}
 footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
@@ -372,7 +379,7 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 .ptab-t{display:flex;flex-direction:column;font-size:15px;font-weight:600;line-height:1.35;flex:1;min-width:0}
 .ptab-t small{font-size:13px;font-weight:600;color:var(--ink-light)}
 .ptab .chev{width:28px;height:28px;border-radius:50%;background:rgba(30,170,255,.1);color:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .25s,background .2s}
-.pitem.open .ptab .chev{transform:rotate(180deg);background:rgba(148,98,251,.12);color:var(--secondary)}
+.pitem.open .ptab .chev{transform:rotate(180deg);background:rgba(148,98,251,.12);color:var(--secondary-text)}
 .pitem.open .ptab-n{background-image:var(--grad-cta);color:#fff}
 .ppanel{padding:0 16px 20px}
 .ppanel[hidden]{display:none}
@@ -381,7 +388,7 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 .p-cols{display:grid;gap:16px;margin-top:8px}
 .tl-sub{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);margin:16px 0 8px}
 .tl-lab{align-self:start;padding:18px 20px;border-radius:var(--r-md);background:linear-gradient(135deg,#f6f1ff,#eef7ff);border:1px solid rgba(148,98,251,.15)}
-.tl-lab b{display:block;font-size:13px;font-weight:700;color:var(--secondary);margin-bottom:4px}
+.tl-lab b{display:block;font-size:13px;font-weight:700;color:var(--secondary-text);margin-bottom:4px}
 .tl-lab p{font-size:15px;color:var(--ink);line-height:1.6}
 @media(min-width:1024px){
   .ptabs{grid-template-columns:320px 1fr;grid-template-rows:repeat(4,min-content) 1fr;column-gap:28px;row-gap:10px}
@@ -393,7 +400,7 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
   .pitem.open .ptab{box-shadow:var(--shadow-card);border:1.5px solid transparent;background-image:linear-gradient(#fff,#fff),var(--grad-cta);background-origin:border-box;background-clip:padding-box,border-box}
   .ppanel{grid-column:2;grid-row:1/6;align-self:start;padding:36px;background:rgba(255,255,255,.92);border:1px solid rgba(30,170,255,.15);border-radius:var(--r-lg);box-shadow:rgba(30,170,255,.08) 0 8px 28px 0}
   .p-title{display:block;font-family:var(--font-display);font-size:26px;font-weight:700;line-height:1.25;margin-bottom:10px}
-  .p-title .tl-tag{display:block;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--secondary);margin-bottom:8px;font-family:var(--font)}
+  .p-title .tl-tag{display:block;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--secondary-text);margin-bottom:8px;font-family:var(--font)}
   .ppanel .tl-sub{margin-top:20px}
   .p-cols{grid-template-columns:1.3fr 1fr;gap:28px}
 }
@@ -497,7 +504,7 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 .avatar{width:84px;height:84px;border-radius:var(--r-xl);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:30px;font-weight:700;color:#fff;flex-shrink:0;background-image:var(--grad-cta);box-shadow:var(--shadow-btn)}
 .avatar.b{background:linear-gradient(135deg,#9462fb,#f86880)}
 .tcard h3{font-size:22px;margin-bottom:2px}
-.tcard .role{font-size:14px;font-weight:600;color:var(--secondary)}
+.tcard .role{font-size:14px;font-weight:600;color:var(--secondary-text)}
 .tcard .t-body{padding:20px 28px 28px}
 .t-badge{display:inline-flex;margin-top:8px;font-size:12px;font-weight:600;color:#0070b8;background:rgba(30,170,255,.08);border:1px solid rgba(30,170,255,.25);border-radius:99px;padding:3px 12px}
 .partners{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
@@ -506,7 +513,7 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 .steps{list-style:none;padding:0;display:grid;gap:14px;position:relative;max-width:1180px;margin:0 auto}
 .step{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center}
 .step .sd{width:34px;height:34px;border-radius:50%;background:var(--dot);color:#fff;border:3px solid #fff;box-shadow:0 2px 8px rgba(29,73,166,.25);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;justify-self:center;position:relative;z-index:1}
-.step .sd.light{color:#6b4a00}
+.step .sd.light{color:#3d2900}
 .step .sc{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:rgba(30,170,255,.1) 0 8px 28px 0;padding:16px 18px;display:flex;align-items:center;gap:14px}
 .step .ic{width:48px;height:48px;border-radius:50%;background:var(--tint);color:var(--dot);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .step h3{font-family:var(--font-display);font-size:16px;font-weight:700;line-height:1.35;letter-spacing:-.01em}
@@ -556,7 +563,7 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 .t-ph::before{display:none}
 .tcard .t-body{padding:24px 28px 28px;align-self:start}
 .tcard h3{font-size:22px;margin-bottom:4px}
-.tcard .role{font-size:14px;font-weight:600;color:var(--secondary);margin-bottom:16px}
+.tcard .role{font-size:14px;font-weight:600;color:var(--secondary-text);margin-bottom:16px}
 @media(min-width:640px){.tcard{grid-template-columns:200px 1fr}.t-ph{min-height:100%}.tcard .t-body{padding:28px}}
 @media(min-width:768px) and (max-width:1023px){.teachers{grid-template-columns:1fr}}
 
@@ -651,8 +658,10 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 #loi-ich .card h3{color:var(--ink);font-size:18px;margin-bottom:10px;text-wrap:pretty}
 #loi-ich .card p{text-wrap:wrap}
 #loi-ich .card p{color:var(--ink-soft)}
-#loi-ich .out-group{color:var(--secondary)}
-#loi-ich .out-list li{color:var(--ink-muted)}
+#loi-ich .out-group{color:var(--secondary-text)}
+#loi-ich .out-list{margin-top:-5px}
+#loi-ich .out-list li{color:var(--ink-muted);line-height:27.2px}
+#loi-ich .out-list svg{margin-top:5px}
 #loi-ich .out-list svg{color:var(--primary)}
 /* footer v2 */
 @media(min-width:768px){.foot-grid{grid-template-columns:1.1fr 1.2fr 1fr;gap:48px}}
@@ -667,7 +676,7 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
 .foot-follow{margin-top:20px;font-size:14px;line-height:1.7}
 .foot-follow b{color:#fff}
 /* modules (reuse ptabs) */
-.ptab-t small{color:var(--secondary)}
+.ptab-t small{color:var(--secondary-text)}
 .mod-ico{display:inline-flex;margin-right:6px}
 
 </style>
@@ -733,6 +742,7 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
         <li><a class="nav-link" href="#chuong-trinh">Chương trình</a></li>
         <li><a class="nav-link" href="#giang-vien">Giảng viên</a></li>
         <li><a class="nav-link" href="#faq">FAQ</a></li>
+        <li><a class="nav-link" href="#lien-he">Liên hệ</a></li>
       </ul>
       <div class="nav-right">
         <a href="#dang-ky" class="btn btn-primary btn-sm">Đăng ký ngay</a>
@@ -746,6 +756,7 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
         <li><a class="nav-link-mobile" href="#chuong-trinh">Chương trình học</a></li>
         <li><a class="nav-link-mobile" href="#giang-vien">Giảng viên</a></li>
         <li><a class="nav-link-mobile" href="#faq">Câu hỏi thường gặp</a></li>
+        <li><a class="nav-link-mobile" href="#lien-he">Liên hệ</a></li>
       </ul>
     </div>
   </div>
@@ -987,22 +998,22 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
           <div class="form-row">
             <div class="form-field">
               <label class="form-label" for="f-name">Họ và tên <span class="req" aria-hidden="true">*</span></label>
-              <input class="form-input" id="f-name" name="name" type="text" autocomplete="name" required aria-required="true" aria-describedby="f-name-err" placeholder="Ví dụ: Nguyễn Văn A…">
+              <input class="form-input" id="f-name" maxlength="100" name="name" type="text" autocomplete="name" required aria-required="true" aria-describedby="f-name-err" placeholder="Ví dụ: Nguyễn Văn A…">
               <p class="form-error" id="f-name-err" role="alert" hidden>Vui lòng nhập họ và tên.</p>
             </div>
             <div class="form-field">
               <label class="form-label" for="f-phone">Số điện thoại <span class="req" aria-hidden="true">*</span></label>
-              <input class="form-input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-required="true" aria-describedby="f-phone-err" placeholder="Ví dụ: 0912 345 678…" spellcheck="false">
+              <input class="form-input" id="f-phone" maxlength="20" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-required="true" aria-describedby="f-phone-err" placeholder="Ví dụ: 0912 345 678…" spellcheck="false">
               <p class="form-error" id="f-phone-err" role="alert" hidden>Vui lòng nhập số điện thoại hợp lệ.</p>
             </div>
           </div>
           <div class="form-field">
             <label class="form-label" for="f-company">Tên doanh nghiệp</label>
-            <input class="form-input" id="f-company" name="company" type="text" autocomplete="organization" placeholder="Công ty / đơn vị của bạn…">
+            <input class="form-input" id="f-company" maxlength="150" name="company" type="text" autocomplete="organization" placeholder="Công ty / đơn vị của bạn…">
           </div>
           <div class="form-field">
             <label class="form-label" for="f-email">Email</label>
-            <input class="form-input" id="f-email" name="email" type="email" autocomplete="email" aria-describedby="f-email-err" placeholder="Ví dụ: email@congty.vn…" spellcheck="false">
+            <input class="form-input" id="f-email" maxlength="120" name="email" type="email" autocomplete="email" aria-describedby="f-email-err" placeholder="Ví dụ: email@congty.vn…" spellcheck="false">
             <p class="form-error" id="f-email-err" role="alert" hidden>Vui lòng nhập email hợp lệ.</p>
           </div>
           <div class="form-field">
@@ -1054,7 +1065,7 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
 
 </main>
 
-<footer aria-label="Thông tin NetSpace Academy">
+<footer id="lien-he" aria-label="Thông tin NetSpace Academy">
   <div class="container">
     <div class="foot-grid">
       <div>
@@ -1115,7 +1126,7 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
   var pastHero=false,onForm=false;
   function up(){bar.classList.toggle('show',pastHero&&!onForm)}
   new IntersectionObserver(function(e){pastHero=!e[0].isIntersecting;up()}).observe(hero);
-  new IntersectionObserver(function(e){onForm=e[0].isIntersecting;up()},{threshold:.15}).observe(form);
+  new IntersectionObserver(function(e){onForm=e[0].isIntersecting;document.body.classList.toggle('on-form',onForm);up()},{threshold:0}).observe(form);
 })();
 
 // FAQ: one answer open at a time
@@ -1125,6 +1136,19 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
     var d=e.target;if(!d.open)return;
     [].forEach.call(list.querySelectorAll('details[open]'),function(o){if(o!==d)o.open=false});
   },true);
+})();
+
+// nav: mark the section in view
+(function(){
+  var map={};
+  [].forEach.call(document.querySelectorAll('.nav-link[href^="#"],.nav-link-mobile[href^="#"]'),function(a){var id=a.getAttribute('href').slice(1);(map[id]=map[id]||[]).push(a)});
+  if(!('IntersectionObserver' in window))return;
+  var cur=null;
+  function set(id){if(cur===id)return;cur=id;Object.keys(map).forEach(function(k){map[k].forEach(function(a){if(k===id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})})}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)set(e.target.id)})},{rootMargin:'-40% 0px -55% 0px'});
+  Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+  var hero=document.getElementById('top');
+  if(hero)new IntersectionObserver(function(e){if(e[0].isIntersecting)set(null)},{rootMargin:'-40% 0px -55% 0px'}).observe(hero);
 })();
 
 // back to top
