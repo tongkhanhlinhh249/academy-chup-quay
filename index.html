@@ -426,8 +426,11 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 /* hero phone visual */
 .phone-visual{position:relative;max-width:520px;margin:0 auto;width:100%;aspect-ratio:1/1.05;display:flex;align-items:center;justify-content:center}
 .phone-visual .hero-disc{inset:4%}
+.screen .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.screen::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),transparent 25%,transparent 70%,rgba(0,0,0,.3));pointer-events:none}
+.screen .vf-grid,.screen .rec,.screen .shutter{z-index:2}
 .orbit{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
-.orbit .ring{grid-area:1/1;position:relative;width:128%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(148,98,251,.2);animation:spin-slow 60s linear infinite}
+.orbit .ring{position:absolute;left:50%;top:50%;translate:-50% -50%;width:128%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(148,98,251,.2);animation:spin-slow 60s linear infinite}
 .orbit .ring::after{content:"";position:absolute;top:-6px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 6px rgba(30,170,255,.15)}
 .orbit .ring.r2{width:108%;border-color:rgba(30,170,255,.18);animation-direction:reverse;animation-duration:45s}
 .orbit .ring.r2::after{background:var(--pink);box-shadow:0 0 0 6px rgba(248,104,128,.15);top:auto;bottom:8%;left:20%}
@@ -450,13 +453,13 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 .chip3 .ico{width:34px;height:34px;border-radius:10px;box-shadow:none}
 .chip3 small{display:block;font-weight:500;color:var(--ink-light);font-size:12px}
 .chip3.c1{left:-2%;top:12%}
-.chip3.c2{right:-2%;top:36%}
-.chip3.c3{left:2%;bottom:10%}
+.chip3.c2{right:-2%;top:60%}
+.chip3.c3{left:2%;bottom:4%}
 .chip3.c1,.chip3.c3{animation:float 6s ease-in-out infinite alternate}
 .chip3.c2{animation:float 7s ease-in-out infinite alternate-reverse}
 @keyframes float{to{transform:translateY(-10px)}}
 @media(prefers-reduced-motion:reduce){.chip3,.rec::before{animation:none}}
-@media(max-width:560px){.chip3.c1{left:0;top:4%}.chip3.c2{right:0;top:40%}.chip3.c3{left:0;bottom:6%}.phone{width:56%}}
+@media(max-width:560px){.chip3.c1{left:0;top:4%}.chip3.c2{right:0;top:60%}.chip3.c3{left:0;bottom:6%}.phone{width:56%}}
 
 /* problem cards */
 .prob-grid{display:grid;gap:16px}
@@ -518,12 +521,12 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
   .steps::before{content:"";grid-row:2;grid-column:1/-1;margin:0 -24px;background:linear-gradient(90deg,transparent,#e3eefc 8%,#e3eefc 92%,transparent)}
   .steps::after{content:"";grid-row:2;grid-column:1/-1;align-self:center;border-top:2px dotted rgba(30,110,200,.45);margin:0 -8px}
   .step{display:contents}
-  .step .sd{grid-row:2;align-self:center;width:30px;height:30px;font-size:13px}
+  .step .sd{grid-row:2;align-self:center;width:30px;height:30px;font-size:13px;z-index:3}
   .step .sc{flex-direction:column;text-align:center;padding:22px 16px;position:relative;z-index:1}
   .step:nth-child(odd) .sc{grid-row:1;align-self:end}
   .step:nth-child(even) .sc{grid-row:3;align-self:start}
   .step:nth-child(1) *{grid-column:1}.step:nth-child(2) *{grid-column:2}.step:nth-child(3) *{grid-column:3}.step:nth-child(4) *{grid-column:4}.step:nth-child(5) *{grid-column:5}
-  .step:nth-child(odd) .sc::after,.step:nth-child(even) .sc::before{content:"";position:absolute;left:50%;height:56px;border-left:2px dotted rgba(30,110,200,.5)}
+  .step:nth-child(odd) .sc::after,.step:nth-child(even) .sc::before{content:"";position:absolute;left:50%;height:34px;border-left:2px dotted rgba(30,110,200,.5)}
   .step:nth-child(odd) .sc::after{top:100%}
   .step:nth-child(even) .sc::before{bottom:100%}
 }
@@ -549,7 +552,8 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 .t-ph{display:flex;align-items:center;justify-content:center;min-height:200px;background-image:var(--grad-cta);color:rgba(255,255,255,.9);font-family:var(--font-display);font-size:96px;font-weight:700;position:relative;overflow:hidden}
 .t-ph.b{background-image:linear-gradient(135deg,#9462fb,#f86880)}
 .t-ph::before{content:"";position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.16);right:-20%;bottom:-20%}
-.t-ph span{position:relative}
+.t-ph{margin:0}.t-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.t-ph::before{display:none}
 .tcard .t-body{padding:24px 28px 28px;align-self:start}
 .tcard h3{font-size:22px;margin-bottom:4px}
 .tcard .role{font-size:14px;font-weight:600;color:var(--secondary);margin-bottom:16px}
@@ -632,6 +636,24 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 @media(min-width:768px){#giang-vien .sec-head .lead{text-wrap:wrap}}
 @media(min-width:768px){#loi-ich .sec-head .lead{text-wrap:wrap}}
 @media(min-width:768px){#quy-trinh .sec-head .lead{text-wrap:wrap}}
+/* benefits: light surface, solid cards */
+#loi-ich.dark{background:linear-gradient(180deg,#eef5ff 0%,#f3efff 100%);color:var(--ink)}
+#loi-ich.dark::before{background:rgba(30,170,255,.16);width:480px;height:480px}
+#loi-ich h2.title{color:var(--ink)}
+#loi-ich .lead{color:var(--ink-soft)}
+#loi-ich .card{background:#fff;border:1px solid rgba(30,170,255,.18);box-shadow:rgba(29,73,166,.10) 0 10px 30px 0;-webkit-backdrop-filter:none;backdrop-filter:none;padding:32px 30px}
+#loi-ich .card::after{content:"";position:absolute;left:0;right:0;top:0;height:5px;background-image:var(--grad-cta);opacity:0;transition:opacity .3s ease}
+#loi-ich .card-hover:hover::after,#loi-ich .card-hover:focus-within::after{opacity:1}
+@media(prefers-reduced-motion:reduce){#loi-ich .card::after{transition:none}}
+#loi-ich article:nth-child(2)::after{background-image:linear-gradient(90deg,#fae096,#f0a24a)}
+#loi-ich article:nth-child(3)::after{background-image:linear-gradient(90deg,#9462fb,#6adbe3)}
+#loi-ich .card-hover:hover{background:#fff;box-shadow:rgba(29,73,166,.18) 0 18px 44px 0}
+#loi-ich .card h3{color:var(--ink);font-size:18px;margin-bottom:10px;text-wrap:pretty}
+#loi-ich .card p{text-wrap:wrap}
+#loi-ich .card p{color:var(--ink-soft)}
+#loi-ich .out-group{color:var(--secondary)}
+#loi-ich .out-list li{color:var(--ink-muted)}
+#loi-ich .out-list svg{color:var(--primary)}
 /* footer v2 */
 @media(min-width:768px){.foot-grid{grid-template-columns:1.1fr 1.2fr 1fr;gap:48px}}
 footer .logo-white{height:44px;width:auto;margin-bottom:16px}
@@ -751,7 +773,7 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
         <div class="hero-disc" aria-hidden="true"></div>
         <div class="phone" aria-hidden="true">
           <div class="screen">
-            <span class="sun"></span><span class="hill"></span><span class="hill h2"></span><span class="subject"></span>
+            <img class="shot" src="assets/aud-3.jpg" alt="" width="1000" height="1500" fetchpriority="high">
             <span class="vf-grid"></span>
             <span class="rec">REC 00:24</span>
             <span class="shutter"></span>
@@ -787,16 +809,18 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
 <section id="loi-ich" class="dark" aria-labelledby="ben-h">
   <div class="container">
     <div class="sec-head reveal">
-      <h2 class="title" id="ben-h">Học viên mang về <span class="grad-dark-text">sau khóa học</span></h2>
+      <h2 class="title" id="ben-h">Học viên mang về <span class="grad-label-text">sau khóa học</span></h2>
       <p class="lead">Kỹ năng, bộ công cụ và quy trình để tự tin sản xuất hình ảnh, video<br class="br-d"> bằng điện thoại cho mọi tình huống.</p>
     </div>
     <div class="grid g3">
-      <article class="card card-hover reveal"><div class="ico" aria-hidden="true"><svg width="28" height="28"><use href="#i-camera"/></svg></div><p class="out-group">Kỹ năng quay chụp nền tảng</p><h3>Sử dụng thành thạo camera điện thoại</h3><p>Nắm các chế độ, thiết lập và tính năng của camera để chủ động ghi hình thay vì để máy tự quyết định.</p></article>
-      <article class="card card-hover reveal" style="transition-delay:.1s"><div class="ico purple" aria-hidden="true"><svg width="28" height="28"><use href="#i-sun"/></svg></div><p class="out-group">Kỹ năng quay chụp nền tảng</p><h3>Làm chủ ánh sáng khi quay chụp</h3><p>Biết đọc và điều phối ánh sáng tự nhiên, ánh sáng nhân tạo để hình ảnh rõ nét, đúng tông.</p></article>
-      <article class="card card-hover reveal" style="transition-delay:.2s"><div class="ico pink" aria-hidden="true"><svg width="28" height="28"><use href="#i-frame"/></svg></div><p class="out-group">Kỹ năng quay chụp nền tảng</p><h3>Bố cục có chủ đích</h3><p>Chọn góc máy, đặt chủ thể và dựng khung hình có mục đích, phù hợp thể loại nội dung.</p></article>
-      <article class="card card-hover reveal"><div class="ico green" aria-hidden="true"><svg width="28" height="28"><use href="#i-mic"/></svg></div><p class="out-group">Kỹ năng quay chụp nền tảng</p><h3>Thu thanh nhanh gọn, nhẹ nhàng</h3><p>Thu âm sạch, rõ tiếng với thiết bị đơn giản, phù hợp video phỏng vấn, giới thiệu và sự kiện.</p></article>
-      <article class="card card-hover reveal" style="transition-delay:.1s"><div class="ico amber" aria-hidden="true"><svg width="28" height="28"><use href="#i-bulb"/></svg></div><p class="out-group">Xây dựng kịch bản</p><h3>Bộ công cụ phát triển ý tưởng và kịch bản</h3><p>Phương pháp tìm ý tưởng, viết kịch bản, lên storyboard để mỗi sản phẩm có mạch nội dung rõ ràng.</p></article>
-      <article class="card card-hover reveal" style="transition-delay:.2s"><div class="ico" aria-hidden="true"><svg width="28" height="28"><use href="#i-film"/></svg></div><p class="out-group">Hậu kỳ</p><h3>Kỹ năng dựng video và hậu kỳ ảnh</h3><p>Chỉnh sửa ảnh, dựng video hoàn chỉnh ngay trên điện thoại bằng CapCut và tối ưu cho đa nền tảng.</p></article>
+      <article class="card card-hover reveal tall"><div class="ico" aria-hidden="true"><svg width="28" height="28"><use href="#i-camera"/></svg></div><h3>Kỹ năng quay chụp nền tảng dùng cho mọi tình huống</h3><ul class="out-list">
+        <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg><span>Sử dụng thành thạo camera điện thoại</span></li>
+        <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg><span>Làm chủ ánh sáng khi quay chụp</span></li>
+        <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg><span>Bố cục có chủ đích</span></li>
+        <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg><span>Thu thanh nhanh gọn, nhẹ nhàng</span></li>
+      </ul></article>
+      <article class="card card-hover reveal tall" style="transition-delay:.1s"><div class="ico amber" aria-hidden="true"><svg width="28" height="28"><use href="#i-bulb"/></svg></div><h3>Xây dựng kịch bản và phát triển ý tưởng</h3><p>Phương pháp tìm ý tưởng, viết kịch bản, lên storyboard để mỗi sản phẩm có mạch nội dung rõ ràng.</p></article>
+      <article class="card card-hover reveal tall" style="transition-delay:.2s"><div class="ico purple" aria-hidden="true"><svg width="28" height="28"><use href="#i-film"/></svg></div><h3>Dựng video và hậu kỳ ảnh bằng điện thoại</h3><p>Chỉnh sửa ảnh, dựng video hoàn chỉnh ngay trên điện thoại bằng CapCut và tối ưu cho đa nền tảng.</p></article>
     </div>
   </div>
 </section>
@@ -899,7 +923,7 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
     </div>
     <div class="grid g2 teachers">
       <article class="card tcard reveal">
-        <div class="t-ph " aria-hidden="true"><span>L</span></div>
+        <figure class="t-ph"><img src="assets/gv-kieu-tuan-long.jpg" alt="Anh Kiều Tuấn Long, Giám đốc sáng tạo Khối MCN" width="600" height="600" loading="lazy"></figure>
         <div class="t-body">
           <h3>Anh Kiều Tuấn Long</h3>
           <p class="role">Giám đốc sáng tạo Khối MCN</p>
@@ -907,7 +931,7 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
         </div>
       </article>
       <article class="card tcard reveal" style="transition-delay:.1s">
-        <div class="t-ph b" aria-hidden="true"><span>A</span></div>
+        <figure class="t-ph b"><img src="assets/gv-le-cong-tuan-anh.jpg" alt="Anh Lê Công Tuấn Anh, Đạo diễn hình ảnh Khối MCN" width="600" height="600" loading="lazy"></figure>
         <div class="t-body">
           <h3>Anh Lê Công Tuấn Anh</h3>
           <p class="role">Đạo diễn hình ảnh Khối MCN</p>
@@ -982,10 +1006,10 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
             <p class="form-error" id="f-email-err" role="alert" hidden>Vui lòng nhập email hợp lệ.</p>
           </div>
           <div class="form-field">
-            <label class="form-label" for="f-size">Quy mô đội ngũ cần đào tạo</label>
+            <label class="form-label" for="f-size">Số lượng học viên</label>
             <select class="form-input" id="f-size" name="size">
-              <option value="">Chọn quy mô</option>
-              <option>Cá nhân</option><option>Dưới 10 người</option><option>10–30 người</option><option>30–100 người</option><option>Trên 100 người</option>
+              <option value="">Chọn số lượng học viên</option>
+              <option>Cá nhân</option><option>Dưới 20 người</option><option>20–100 người</option><option>Trên 100 người</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Đăng ký ngay <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></button>
