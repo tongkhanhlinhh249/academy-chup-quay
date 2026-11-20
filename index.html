@@ -122,7 +122,6 @@ body.on-form .fab-call,body.on-form .to-top{opacity:0;visibility:hidden;pointer-
 @keyframes drift3{to{transform:translate(-60px,-40px) scale(.92)}}
 @keyframes spin-slow{to{transform:rotate(360deg)}}
 @media(max-width:1023px){.hero-bg .ring{display:none}.hero-bg .blob{filter:blur(48px)}}
-@media(prefers-reduced-motion:reduce){.hero-bg .blob,.hero-bg .ring{animation:none}}
 .hero>.container{width:100%}
 .hero-grid{position:relative;z-index:1;display:grid;gap:48px;align-items:center}
 @media(min-width:1024px){.hero-grid{grid-template-columns:1.1fr .9fr}}
@@ -311,7 +310,6 @@ select.form-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://
 .btn.is-loading{opacity:.85;cursor:progress;pointer-events:none}
 .spin{width:18px;height:18px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){.spin{animation-duration:2s}}
 .privacy-link{color:#0070b8;text-decoration:underline;text-underline-offset:2px}
 .form-error{font-size:13px;color:var(--error);margin-top:5px}
 .form-error[hidden]{display:none}
@@ -416,7 +414,6 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
   body{padding-bottom:72px}
   .to-top{bottom:88px;right:16px}
 }
-@media(prefers-reduced-motion:reduce){.sticky-cta{transition:none}}
 /* back to top */
 .to-top{position:fixed;right:24px;bottom:24px;z-index:150;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--primary);color:#fff;box-shadow:var(--shadow-btn);opacity:0;pointer-events:none;transition:opacity .3s,transform .2s}
 .to-top.show{opacity:1;pointer-events:auto}
@@ -424,11 +421,6 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 /* reveal */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
 .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-  .reveal{opacity:1;transform:none;transition:none}
-  .card-hover:hover{transform:none}
-}
 
 /* ===== Course: Chụp ảnh & quay video bằng điện thoại ===== */
 /* hero phone visual */
@@ -466,7 +458,6 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 .chip3.c1,.chip3.c3{animation:float 6s ease-in-out infinite alternate}
 .chip3.c2{animation:float 7s ease-in-out infinite alternate-reverse}
 @keyframes float{to{transform:translateY(-10px)}}
-@media(prefers-reduced-motion:reduce){.chip3,.rec::before{animation:none}}
 @media(max-width:560px){.chip3.c1{left:0;top:4%}.chip3.c2{right:0;top:60%}.chip3.c3{left:0;bottom:6%}.phone{width:56%}}
 
 /* problem cards */
@@ -575,7 +566,6 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 @keyframes ring{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.35);opacity:0}}
 .to-top{background:var(--secondary);box-shadow:rgba(148,98,251,.35) 0 4px 20px 0}
 @media(max-width:1023px){.fab-call{right:16px;bottom:144px}}
-@media(prefers-reduced-motion:reduce){.fab-call::before{animation:none}}
 @media(max-width:360px){.br-m{display:none}}
 @media(min-width:640px){.prob h3{min-height:2.7em}}
 
@@ -599,7 +589,6 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
   .mcard.m1{--i:0}.mcard.m2{--i:1}.mcard.m3{--i:2}.mcard.m4{--i:3}
   .mstack{gap:28px}
 }
-@media(prefers-reduced-motion:reduce){.mcard{position:relative!important;top:auto!important}}
 
 /* module stacked cards */
 .mstack{display:grid;gap:20px;max-width:none;margin:0 auto}
@@ -621,7 +610,6 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
   .mcard.m1{--i:0}.mcard.m2{--i:1}.mcard.m3{--i:2}.mcard.m4{--i:3}
   .mstack{gap:28px}
 }
-@media(prefers-reduced-motion:reduce){.mcard{position:relative!important;top:auto!important}}
 
 /* audience photo cards */
 .aud-grid{display:grid;gap:20px}
@@ -637,7 +625,6 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 .p-body p{font-size:15px;color:var(--ink-soft);line-height:1.65}
 .pcard{overflow:visible}
 .p-img{border-radius:var(--r-lg) var(--r-lg) 0 0}
-@media(prefers-reduced-motion:reduce){.pcard:hover .p-img img{transform:none}}
 @media(min-width:768px){#chuong-trinh .sec-head{max-width:960px}}
 .br-d{display:none}
 @media(min-width:768px){.br-d{display:inline}#quy-trinh .sec-head{max-width:860px}}
@@ -653,7 +640,6 @@ footer a:focus-visible,footer button:focus-visible{outline-color:#fff}
 #loi-ich .card{background:#fff;border:1px solid rgba(30,170,255,.18);box-shadow:rgba(29,73,166,.10) 0 10px 30px 0;-webkit-backdrop-filter:none;backdrop-filter:none;padding:32px 30px}
 #loi-ich .card::after{content:"";position:absolute;left:0;right:0;top:0;height:5px;background-image:var(--grad-cta);opacity:0;transition:opacity .3s ease}
 #loi-ich .card-hover:hover::after,#loi-ich .card-hover:focus-within::after{opacity:1}
-@media(prefers-reduced-motion:reduce){#loi-ich .card::after{transition:none}}
 #loi-ich article:nth-child(2)::after{background-image:linear-gradient(90deg,#fae096,#f0a24a)}
 #loi-ich article:nth-child(3)::after{background-image:linear-gradient(90deg,#9462fb,#6adbe3)}
 #loi-ich .card-hover:hover{background:#fff;box-shadow:rgba(29,73,166,.18) 0 18px 44px 0}
@@ -1159,7 +1145,7 @@ footer .foot-list a{display:inline;padding:0;text-decoration:underline;text-unde
 // scroll reveal
 (function(){
   var els=document.querySelectorAll('.reveal');
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
   var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
   els.forEach(function(el){if(el.getBoundingClientRect().top<innerHeight){el.classList.add('in');return}obs.observe(el)});
 })();
